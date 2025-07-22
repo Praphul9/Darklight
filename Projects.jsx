@@ -1,1 +1,0 @@
-export default function Projects() { return <div className='p-10'>Our Projects Showcase</div>; }
