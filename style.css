@@ -939,6 +939,30 @@ body {
   box-shadow: 0 10px 25px rgba(24, 90, 219, 0.1);
 }
 
+/* leadership Section */
+.services {
+  padding: 80px 0;
+  background-color: var(--color-dark-bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+}
+
+.service-card {
+  background-color: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  transition: transform var(--duration-normal) var(--ease-standard),
+              box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(24, 90, 219, 0.1);
+}
+
 /* Projects Section */
 .projects {
   padding: 80px 0;
