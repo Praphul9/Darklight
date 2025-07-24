@@ -197,7 +197,54 @@
   </div>
 </section>
  
-
+<!-- ===================== PAYMENT NOTIFICATION FORM ===================== -->
+<section id="notify-payment" style="padding: 60px 20px; background: #fff;">
+  <div style="max-width: 700px; margin: auto; text-align: center;">
+    <h2 style="font-size: 2.2rem; color: #222; margin-bottom: 10px;">Payment Notification</h2>
+    <p style="font-size: 1.05rem; color: #555; margin-bottom: 30px;">
+      Please fill out the form below to let us know you've made a payment.
+    </p>
+ 
+    <form onsubmit="return showPaymentSuccess()" style="text-align: left;">
+      <div style="margin-bottom: 15px;">
+        <label for="name" style="font-weight: 600;">Your Name:</label><br>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+      </div>
+ 
+      <div style="margin-bottom: 15px;">
+        <label for="email" style="font-weight: 600;">Your Email:</label><br>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+      </div>
+ 
+      <div style="margin-bottom: 15px;">
+        <label for="amount" style="font-weight: 600;">Amount Paid (₹):</label><br>
+        <input type="number" id="amount" name="amount" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+      </div>
+ 
+      <div style="margin-bottom: 20px;">
+        <label for="transaction" style="font-weight: 600;">Transaction ID / Reference:</label><br>
+        <input type="text" id="transaction" name="transaction" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+      </div>
+ 
+      <button type="submit" style="padding: 12px 25px; font-size: 1rem; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        Submit
+      </button>
+    </form>
+ 
+    <!-- Success Message -->
+    <div id="paymentSuccess" style="display: none; margin-top: 20px; color: green; font-weight: bold;">
+      Thank you! We’ve received your payment details.
+    </div>
+  </div>
+</section>
+ 
+<script>
+  function showPaymentSuccess() {
+    document.getElementById('paymentSuccess').style.display = 'block';
+    return false; // Prevent actual form submission
+  }
+</script>
+ 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
