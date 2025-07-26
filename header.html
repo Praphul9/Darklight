@@ -1,0 +1,26 @@
+<!-- header.html -->
+<header style="background: #1a1a1a; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+  <a href="index.html">
+    <img src="logo.png" alt="Darklight Technology Logo" style="height: 50px;" />
+  </a>
+  <nav>
+    <button onclick="toggleMenu()" style="background: none; border: none; color: white; font-size: 24px;">☰</button>
+    <ul id="menu" style="display: none; list-style: none; margin: 0; padding: 0; position: absolute; top: 60px; right: 20px; background: #222; border-radius: 8px; z-index: 999;">
+      <li><a href="index.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Home</a></li>
+      <li><a href="ai-solutions.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">AI Solutions</a></li>
+      <li><a href="process-automation.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Automation</a></li>
+      <li><a href="servicenow.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">ServiceNow</a></li>
+      <li><a href="software-development.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Software</a></li>
+      <li><a href="hardware.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Hardware</a></li>
+      <li><a href="cloud-services.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Cloud</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
