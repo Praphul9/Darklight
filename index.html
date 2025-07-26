@@ -119,7 +119,23 @@
       font-size: 1rem;
       margin-bottom: 15px;
     }
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
 
+.swiper-wrapper {
+  display: flex;
+  width: 100%;
+  transition-timing-function: ease-in-out;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box;
+}
     .explore-btn {
       background-color: #00c2ff;
       color: #000;
@@ -191,18 +207,24 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.mySwiper', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
+  loop: true,
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
     }
-  });
+  }
+});
 </script>
 	
 <section id="leadership" style="background: url('https://wallpapercave.com/wp/wp8970940.jpg') no-repeat center center/cover; padding: 80px 20px;">
