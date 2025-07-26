@@ -69,8 +69,182 @@
             </div>
         </div>
     </section>
-	
-  <!-- Swiper CSS -->
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+  }
+
+  .services {
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+    transition: background-image 1s ease-in-out;
+    text-align: center;
+    min-height: 450px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .section-title {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .swiper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .swiper-slide {
+    background: transparent !important;
+    height: auto;
+  }
+
+  .slide-content {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+  }
+
+  .slide-content h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .explore-btn {
+    background-color: #00c2ff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .explore-btn:hover {
+    background-color: #fff;
+  }
+
+  .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.6;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #00c2ff;
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<section id="services" class="services" style="background-image: url('ai.jpg');">
+  <div class="overlay"></div>
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" data-bg="ai.jpg">
+        <div class="slide-content">
+          <h3>AI Solutions</h3>
+          <p>Conversational AI, NLP services, intelligent automation</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-bg="automation.jpg">
+        <div class="slide-content">
+          <h3>Process Automation</h3>
+          <p>RPA, workflow streamlining, business efficiency tools</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-bg="servicenow.jpg">
+        <div class="slide-content">
+          <h3>ServiceNow</h3>
+          <p>Implementation, customization, and ongoing support</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-bg="software.jpg">
+        <div class="slide-content">
+          <h3>Software Development</h3>
+          <p>Full-stack web and mobile application development</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-bg="hardware.jpg">
+        <div class="slide-content">
+          <h3>Hardware Integration</h3>
+          <p>Procurement, installation, and infrastructure support</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-bg="cloud.jpg">
+        <div class="slide-content">
+          <h3>Cloud Services</h3>
+          <p>Migration, management, and optimization</p>
+          <button class="explore-btn">Explore More</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- SwiperJS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const servicesSection = document.querySelector('.services');
+  const slides = document.querySelectorAll('.swiper-slide');
+
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      slideChange: function () {
+        const currentSlide = slides[swiper.realIndex];
+        const bg = currentSlide.getAttribute('data-bg');
+        servicesSection.style.backgroundImage = `url('${bg}')`;
+      }
+    }
+  });
+</script>
+  <!-- Swiper CSS -
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
   <style>
@@ -184,12 +358,12 @@
         <button class="explore-btn">Explore More</button>
       </div>
     </div>
-    <!-- Pagination -->
+    <!-- Pagination -
     <div class="swiper-pagination"></div>
   </div>
 </section>
 
-<!-- SwiperJS -->
+<!-- SwiperJS -
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.mySwiper', {
@@ -216,7 +390,7 @@
       }
     }
   });
-</script>
+</script>   -->
  
 <section id="leadership" style="background: url('https://wallpapercave.com/wp/wp8970940.jpg') no-repeat center center/cover; padding: 80px 20px;">
   <div class="container">
