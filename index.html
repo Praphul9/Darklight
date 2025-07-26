@@ -178,56 +178,6 @@
     </div>
   </div>
 </section>
-
-<!-- ===================== PHONEPE UPI PAYMENT SECTION ===================== -->
-<section id="payment" style="padding: 60px 20px; background: #cccccc;">
-  <div style="max-width: 800px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 10px;">Pay via Gpay</h2>
-    <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">You can pay using Gpay UPI by scanning the QR code below or sending to our UPI ID directly.</p>
-    
-    <img src="upi_qr.jpg" alt="PhonePe UPI QR" style="width: 220px; height: 220px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);" />
-    
-    <p style="font-size: 1rem; color: #333; margin-bottom: 10px;">
-      UPI ID: <strong>pandey.praphulkumar@okhdfcbank</strong>
-    </p>
- 
-    <p style="font-size: 0.9rem; color: #777;">Scan using PhonePe / GPay / Paytm or any UPI-compatible app</p>
-  </div>
-</section>
- 
-<!-- ===================== PAYMENT NOTIFICATION FORM ===================== -->
-<section id="notify-payment" style="padding: 60px 20px; background: #F9F9F9;">
-  <div style="max-width: 700px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.2rem; color: #222; margin-bottom: 10px;">Payment Notification</h2>
-    <p style="font-size: 1.05rem; color: #555; margin-bottom: 30px;">
-      Please fill out the form below to let us know you've made a payment.
-    </p>
- 
-    <form onsubmit="return showPaymentSuccess()" style="text-align: left;">
-      <div style="margin-bottom: 15px;">
-        <label for="name" style="font-weight: 600; color: black !important;">Your Name:</label><br>
-        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-      </div>
- 
-      <div style="margin-bottom: 15px;">
-        <label for="email" style="font-weight: 600; color: black !important;">Your Email:</label><br>
-        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-      </div>
- 
-      <div style="margin-bottom: 15px;">
-        <label for="amount" style="font-weight: 600; color: black !important;">Amount Paid (₹):</label><br>
-        <input type="number" id="amount" name="amount" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-      </div>
- 
-      <div style="margin-bottom: 20px;">
-        <label for="transaction" style="font-weight: 600; color: black !important;">Transaction ID / Reference:</label><br>
-        <input type="text" id="transaction" name="transaction" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-      </div>
- 
-      <button type="submit" style="padding: 12px 25px; font-size: 1rem; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer;">
-        Submit
-      </button>
-    </form>
  
     <!-- Success Message -->
     <div id="paymentSuccess" style="display: none; margin-top: 20px; color: green; font-weight: bold;">
