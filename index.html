@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darklight Technology LTD - Empowering Your Digital Future</title>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Darklight Technology LTD - Empowering Your Digital Future</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -67,7 +69,155 @@
             </div>
         </div>
     </section>
+	
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+
+    .services {
+      padding: 60px 20px;
+      background: url('section-bg.jpg') no-repeat center center/cover;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .swiper {
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .swiper-slide h3 {
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+    }
+
+    .swiper-slide p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .explore-btn {
+      background-color: #00c2ff;
+      color: #000;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .explore-btn:hover {
+      background-color: #fff;
+    }
+
+    /* Pagination dots */
+    .swiper-pagination-bullets .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #00c2ff;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<section id="services" class="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('ai.jpg')">
+        <h3>AI Solutions</h3>
+        <p>Conversational AI, NLP services, intelligent automation</p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+      <div class="swiper-slide" style="background-image: url('automation.jpg')">
+        <h3>Process Automation</h3>
+        <p>RPA, workflow streamlining, business efficiency tools</p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+      <div class="swiper-slide" style="background-image: url('servicenow.jpg')">
+        <h3>ServiceNow</h3>
+        <p>Implementation, customization, and ongoing support</p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+      <div class="swiper-slide" style="background-image: url('software.jpg')">
+        <h3>Software Development</h3>
+        <p>Full-stack web and mobile application development</p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+      <div class="swiper-slide" style="background-image: url('hardware.jpg')">
+        <h3>Hardware Integration</h3>
+        <p>Procurement, installation, and infrastructure support</p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+      <div class="swiper-slide" style="background-image: url('cloud.jpg')">
+        <h3>Cloud Services</h3>
+        <p>Migration, management, and optimization</p>
+        <button class="explore-btn">Explore More</button>
+      </div>
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- SwiperJS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+	
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
