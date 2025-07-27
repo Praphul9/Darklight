@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hardware Integration | Darklight Technology LTD</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -61,16 +62,29 @@
   </style>
 </head>
 <body>
-    <!-- Load Header -->
-<div id="header-placeholder"></div>
-<script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-    });
-</script>
-  
+
+  <!-- Load Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Header loader script -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+
+        // Attach toggle logic after header is loaded
+        const toggleBtn = document.querySelector(".nav-toggle");
+        const navbar = document.getElementById("navbar");
+        if (toggleBtn && navbar) {
+          toggleBtn.addEventListener("click", () => {
+            navbar.classList.toggle("nav-hidden");
+            navbar.classList.toggle("nav-show");
+          });
+        }
+      });
+  </script>
+
   <div class="container">
     <h1>Hardware Integration</h1>
     <img src="hardware.jpg" alt="Hardware Integration" />
@@ -122,5 +136,6 @@
   <center>
     <a href="index.html" class="back-link">← Back to Home</a>
   </center>
+
 </body>
 </html>
