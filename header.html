@@ -11,9 +11,10 @@
     ☰
   </button>
 
-  <!-- Navigation -->
-  <nav class="nav nav-hidden" id="navbar" style="width: 100%; flex-direction: column; text-align: left; margin-top: 10px;">
-    <ul class="nav-list" style="list-style: none; padding: 0; margin: 0;">
+  <!-- Navigation Menu -->
+  <nav class="nav nav-hidden" id="navbar"
+    style="width: 100%; flex-direction: column; text-align: left; margin-top: 10px;">
+    <ul class="nav-list" style="list-style: none; padding: 0;">
       <li><a href="index.html#home" class="nav-link" style="color: white; padding: 10px 0; display: block; text-decoration: none;">Home</a></li>
       <li><a href="index.html#about" class="nav-link" style="color: white; padding: 10px 0; display: block; text-decoration: none;">About</a></li>
       <li><a href="index.html#services" class="nav-link" style="color: white; padding: 10px 0; display: block; text-decoration: none;">Services</a></li>
@@ -25,10 +26,10 @@
   </nav>
 </header>
 
-<!-- Style for toggle functionality -->
+<!-- Style and Script -->
 <style>
   .nav-hidden {
-    display: none !important;
+    display: none;
   }
 
   .nav-show {
@@ -39,7 +40,6 @@
     .nav {
       display: flex !important;
       flex-direction: row !important;
-      justify-content: flex-end;
       width: auto !important;
       margin-top: 0 !important;
     }
@@ -52,14 +52,22 @@
       display: flex;
       gap: 20px;
     }
+
+    .nav-list li a {
+      padding: 10px 15px !important;
+    }
   }
 </style>
 
-<!-- Toggle Script -->
 <script>
   function toggleNav() {
     const nav = document.getElementById('navbar');
-    nav.classList.toggle('nav-hidden');
-    nav.classList.toggle('nav-show');
+    if (nav.classList.contains('nav-hidden')) {
+      nav.classList.remove('nav-hidden');
+      nav.classList.add('nav-show');
+    } else {
+      nav.classList.remove('nav-show');
+      nav.classList.add('nav-hidden');
+    }
   }
 </script>
