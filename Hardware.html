@@ -61,26 +61,16 @@
   </style>
 </head>
 <body>
-    <!-- Header placeholder -->
-  <div id="header-placeholder"></div>
-
-  <!-- Load header.html -->
-  <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
-
-        // Ensure toggle menu works after loading
-        const navButton = document.querySelector(".nav-toggle");
-        const navLinks = document.getElementById("navLinks");
-        if (navButton && navLinks) {
-          navButton.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-          });
-        }
-      });
-  </script>
+    <!-- Load Header -->
+<div id="header-placeholder"></div>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+</script>
+  
   <div class="container">
     <h1>Hardware Integration</h1>
     <img src="hardware.jpg" alt="Hardware Integration" />
