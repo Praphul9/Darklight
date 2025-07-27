@@ -1,26 +1,92 @@
 <!-- header.html -->
-<header style="background: #1a1a1a; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <a href="index.html">
-    <img src="logo.jpg" alt="Darklight Technology Logo" style="height: 50px;" />
-  </a>
-  <nav>
-    <button onclick="toggleMenu()" style="background: none; border: none; color: white; font-size: 24px;">☰</button>
-    <ul id="menu" style="display: none; list-style: none; margin: 0; padding: 0; position: absolute; top: 60px; right: 20px; background: #222; border-radius: 8px; z-index: 999;">
-      <li><a href="index.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Home</a></li>
-      <li><a href="ai-solutions.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">AI Solutions</a></li>
-      <li><a href="process-automation.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Automation</a></li>
-      <li><a href="servicenow.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">ServiceNow</a></li>
-      <li><a href="software-development.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Software</a></li>
-      <li><a href="hardware.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Hardware</a></li>
-      <li><a href="cloud-services.html" style="display: block; padding: 10px 20px; color: white; text-decoration: none;">Cloud</a></li>
-    </ul>
-  </nav>
+<style>
+  .site-header {
+    background: #1a1a1a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .site-header a img {
+    height: 50px;
+  }
+
+  .nav-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background 0.2s;
+  }
+
+  .nav-links li a:hover {
+    background: #333;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #222;
+      display: none;
+      width: 200px;
+      border-radius: 8px;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+  }
+</style>
+
+<header class="site-header">
+  <a href="index.html">
+    <img src="logo.jpg" alt="Darklight Technology Logo" />
+  </a>
+  <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="ai-solutions.html">AI Solutions</a></li>
+    <li><a href="process-automation.html">Automation</a></li>
+    <li><a href="servicenow.html">ServiceNow</a></li>
+    <li><a href="software-development.html">Software</a></li>
+    <li><a href="hardware.html">Hardware</a></li>
+    <li><a href="cloud-services.html">Cloud</a></li>
+    <li><a href="mailto:connect@darklighttechnology.in">Contact</a></li>
+  </ul>
 </header>
 
-
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
+  function toggleNav() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
 </script>
