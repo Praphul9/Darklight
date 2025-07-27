@@ -8,26 +8,23 @@
 <title>Darklight Technology LTD - Empowering Your Digital Future</title>
     <link rel="stylesheet" href="style.css">
 </head>
-     <!-- Header placeholder -->
+<!-- Header -->
   <div id="header-placeholder"></div>
-
-  <!-- Load header.html -->
   <script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
 
-      const navButton = document.querySelector(".nav-toggle");
-      const navLinks = document.getElementById("navbar");
-
-      if (navButton && navLinks) {
-        navButton.addEventListener("click", () => {
-          navLinks.classList.toggle("nav-hidden");
-          navLinks.classList.toggle("nav-show");
-        });
-      }
-    });
+        // Add menu toggle script after header loads
+        const toggleBtn = document.getElementById("menu-toggle");
+        const nav = document.getElementById("mobile-nav");
+        if (toggleBtn && nav) {
+          toggleBtn.addEventListener("click", function () {
+            nav.classList.toggle("open");
+          });
+        }
+      });
   </script>           
 
     <!-- Hero Section -->
