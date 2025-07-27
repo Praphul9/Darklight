@@ -13,21 +13,22 @@
 
   <!-- Load header.html -->
   <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
 
-        // Ensure toggle menu works after loading
-        const navButton = document.querySelector(".nav-toggle");
-        const navLinks = document.getElementById("navLinks");
-        if (navButton && navLinks) {
-          navButton.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-          });
-        }
-      });
-  </script>               
+      const navButton = document.querySelector(".nav-toggle");
+      const navLinks = document.getElementById("navbar");
+
+      if (navButton && navLinks) {
+        navButton.addEventListener("click", () => {
+          navLinks.classList.toggle("nav-hidden");
+          navLinks.classList.toggle("nav-show");
+        });
+      }
+    });
+  </script>           
 
     <!-- Hero Section -->
     <section id="home" class="hero">
