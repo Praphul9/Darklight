@@ -1,12 +1,13 @@
 <!-- Header -->
-<header style="background: #1a1a1a; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+<header style="background: #1a1a1a; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <!-- Logo -->
   <a href="index.html">
-    <img src="logo.jpg" alt="Darklight Technology Logo" style="height: 50px;">
+    <img src="logo.jpg" alt="Darklight Technology LTD" style="height: 50px;">
   </a>
 
   <!-- Desktop Nav -->
   <nav class="desktop-nav">
-    <ul>
+    <ul class="nav-list">
       <li><a href="index.html#home">Home</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#services">Services</a></li>
@@ -17,12 +18,12 @@
     </ul>
   </nav>
 
-  <!-- Hamburger for Mobile -->
+  <!-- Hamburger Button (Mobile) -->
   <button id="menu-toggle" class="hamburger">☰</button>
 </header>
 
-<!-- Mobile Slide Menu -->
-<nav id="mobileNav" class="mobile-nav">
+<!-- Mobile Nav -->
+<nav id="mobile-nav">
   <ul>
     <li><a href="index.html#home">Home</a></li>
     <li><a href="index.html#about">About</a></li>
@@ -36,8 +37,7 @@
 
 <!-- CSS -->
 <style>
-  /* Desktop nav styles */
-  .desktop-nav ul {
+  .nav-list {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -45,70 +45,63 @@
     padding: 0;
   }
 
-  .desktop-nav ul li a {
+  .nav-list li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
     padding: 10px 12px;
+    display: inline-block;
   }
 
-  .desktop-nav ul li a:hover {
+  .nav-list li a:hover {
     background: #00c2ff;
     color: #000;
-    border-radius: 5px;
+    border-radius: 4px;
   }
 
-  /* Hamburger Button */
   .hamburger {
+    display: none;
     font-size: 28px;
     background: none;
-    border: none;
     color: white;
+    border: none;
     cursor: pointer;
-    display: none;
   }
 
-  /* Mobile nav (hidden by default) */
-  .mobile-nav {
+  #mobile-nav {
+    display: none;
     position: fixed;
     top: 0;
     right: -260px;
-    width: 260px;
-    height: 100%;
+    width: 240px;
+    height: 100vh;
     background: #111;
-    z-index: 9999;
-    transition: right 0.3s ease;
+    z-index: 999;
     padding-top: 60px;
+    transition: right 0.3s ease-in-out;
   }
 
-  .mobile-nav.open {
+  #mobile-nav.open {
     right: 0;
   }
 
-  .mobile-nav ul {
+  #mobile-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .mobile-nav ul li {
-    padding: 15px 20px;
-  }
-
-  .mobile-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+  #mobile-nav ul li a {
     display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
   }
 
-  .mobile-nav ul li a:hover {
+  #mobile-nav ul li a:hover {
     background: #00c2ff;
     color: #000;
-    border-radius: 5px;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .desktop-nav {
       display: none;
@@ -117,11 +110,9 @@
     .hamburger {
       display: block;
     }
-  }
 
-  @media (min-width: 769px) {
-    .mobile-nav {
-      display: none;
+    #mobile-nav {
+      display: block;
     }
   }
 </style>
@@ -130,7 +121,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("menu-toggle");
-    const mobileNav = document.getElementById("mobileNav");
+    const mobileNav = document.getElementById("mobile-nav");
 
     toggleBtn.addEventListener("click", () => {
       mobileNav.classList.toggle("open");
