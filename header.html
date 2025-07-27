@@ -1,94 +1,27 @@
-<!-- header.html -->
-<style>
-  .site-header {
-    background: #1a1a1a;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .site-header a img {
-    height: 50px;
-  }
-
-  .nav-toggle {
-    display: none;
-    font-size: 26px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    transition: background 0.2s;
-  }
-
-  .nav-links li a:hover {
-    background: #333;
-    border-radius: 6px;
-  }
-
-  @media (max-width: 768px) {
-    .nav-toggle {
-      display: block;
-    }
-
-    .nav-links {
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: #222;
-      display: none;
-      width: 200px;
-      border-radius: 8px;
-    }
-
-    .nav-links.show {
-      display: flex;
-    }
-  }
-</style>
-
-<header class="site-header">
+<!-- Updated Header -->
+<header style="background: #1a1a1a; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
   <a href="index.html">
-    <img src="logo.jpg" alt="Darklight Technology Logo" />
+    <img src="logo.png" alt="Darklight Technology Logo" style="height: 50px;" />
   </a>
-  <button class="nav-toggle" onclick="toggleNav()">☰</button>
-  <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#services" class="nav-link">Services</a></li>
-			<li><a href="#leadership" class="nav-link">Leadership Team</a></li>
-                        <li><a href="#projects" class="nav-link">Projects</a></li>
-                        <li><a href="#ai-solutions" class="nav-link">AI Solutions</a></li>
-                        <li><a href="#careers" class="nav-link">Careers</a></li>
-                    </ul>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle Menu"
+    style="background: none; border: none; color: white; font-size: 28px;">☰</button>
+
+  <nav class="nav" style="width: 100%; display: none; flex-direction: column; margin-top: 10px;" id="navbar">
+    <ul class="nav-list" style="list-style: none; padding: 0; margin: 0;">
+      <li><a href="index.html#home" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">Home</a></li>
+      <li><a href="index.html#about" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">About</a></li>
+      <li><a href="index.html#services" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">Services</a></li>
+      <li><a href="index.html#leadership" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">Leadership Team</a></li>
+      <li><a href="index.html#projects" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">Projects</a></li>
+      <li><a href="index.html#ai-solutions" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">AI Solutions</a></li>
+      <li><a href="index.html#careers" class="nav-link" style="color: white; text-decoration: none; display: block; padding: 10px 0;">Careers</a></li>
+    </ul>
   </nav>
-              
 </header>
 
 <script>
   function toggleNav() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("show");
+    const nav = document.getElementById('navbar');
+    nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
   }
 </script>
